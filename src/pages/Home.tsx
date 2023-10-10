@@ -1,6 +1,13 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Home.css';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonButton,
+} from "@ionic/react";
+import "./Home.css";
+import { testSQLite } from "../testSQLite";
 
 const Home: React.FC = () => {
   return (
@@ -16,7 +23,15 @@ const Home: React.FC = () => {
             <IonTitle size="large">Blank</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer />
+        <div>
+          <IonButton
+            onClick={() => {
+              testSQLite();
+            }}
+          >
+            Test SQLite
+          </IonButton>
+        </div>
       </IonContent>
     </IonPage>
   );
